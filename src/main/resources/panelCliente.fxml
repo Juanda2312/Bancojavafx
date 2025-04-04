@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="800.0" spacing="30.0" style="-fx-padding: 30" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.banco.controlador.PanelClienteControlador">
+   <children>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="lblnombre" text="bienvenido a su banco,aquí podrá  ver sus transacciones" GridPane.rowIndex="1" />
+            <Label fx:id="lblcuenta" text="Numero de cuenta:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Panel Principal de administración">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <MenuButton fx:id="menubuttonperfil" mnemonicParsing="false" prefHeight="25.0" prefWidth="214.0" style="-fx-background-color: #00807a; -fx-text-fill: white;" textFill="WHITE" GridPane.columnIndex="1">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#CerrarSesionAction" text="Cerrar sesión" />
+                <MenuItem mnemonicParsing="false" onAction="#ActualizarDatosAction" text="Actualizar Datos" />
+              </items>
+            </MenuButton>
+         </children>
+      </GridPane>
+      <TableView fx:id="tabletransacciones" prefHeight="331.0" prefWidth="740.0">
+        <columns>
+          <TableColumn fx:id="columntipo" prefWidth="127.0" text="Tipo" />
+          <TableColumn fx:id="columnfecha" prefWidth="169.0" text="Fecha" />
+            <TableColumn fx:id="columnvalor" prefWidth="178.0" text="Valor" />
+            <TableColumn fx:id="columnusuario" prefWidth="121.0" text="Usuario" />
+            <TableColumn fx:id="columncategoria" prefWidth="144.0" text="Categoria" />
+        </columns>
+      </TableView>
+      <HBox prefHeight="104.0" prefWidth="740.0" spacing="20.0">
+         <children>
+            <Button fx:id="btnsaldo" mnemonicParsing="false" onAction="#ConsultarSaldoAction" prefHeight="42.0" prefWidth="130.0" style="-fx-background-color: #00807a;" text="Consultar saldo" textFill="WHITE" />
+            <MenuButton fx:id="menubuttontransacciones" mnemonicParsing="false" prefHeight="42.0" prefWidth="130.0" style="-fx-background-color: #00807a;" text="Transacciones" textFill="WHITE">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#RecargarSaldo" text="Recargar Saldo" />
+                <MenuItem mnemonicParsing="false" onAction="#HacerTransferencia" text="Hacer Transferencia" />
+              </items>
+            </MenuButton>
+         </children>
+      </HBox>
+   </children>
+</VBox>

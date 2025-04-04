@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="center" prefHeight="300.0" prefWidth="400.0" spacing="30.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.banco.controlador.RecargaControlador">
+   <children>
+      <Label text="Realizar Recarga">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <GridPane vgap="10.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Monto a recargar:" />
+            <TextField fx:id="txtmonto" GridPane.columnIndex="1" />
+         </children>
+         <VBox.margin>
+            <Insets right="20.0" />
+         </VBox.margin>
+      </GridPane>
+      <Button fx:id="btnrecargar" mnemonicParsing="false" onAction="#RecargarAction" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: #00807a;" text="Recargar" textFill="WHITE">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+</VBox>
